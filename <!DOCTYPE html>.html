@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+        }
+        .solar-system {
+            position: relative;
+            width: 1000px;
+            height: 1000px;
+        }
+        .sun {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            margin-left: -50px;
+            margin-top: -50px;
+            background: url('http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcSC-tzajqpca4dchoeTCp8ChzFqdXnSnKtpkbx_5arltgIZQDdV4ALDa2ojaIHmI0GE') no-repeat center/cover;
+            border-radius: 50%;
+        }
+        .planet {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin-left: -10px;
+            margin-top: -10px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+        }
+        .mercury {
+            width: 10px;
+            height: 10px;
+            margin-left: -5px;
+            margin-top: -5px;
+            background: linear-gradient(45deg, #bbb, #888);
+        }
+        .venus {
+            width: 18px;
+            height: 18px;
+            margin-left: -9px;
+            margin-top: -9px;
+            background: linear-gradient(45deg, #ffcc99, #ff9966);
+        }
+        .earth {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/6/60/Earth_from_Space.jpg') no-repeat center/cover;
+        }
+        .mars {
+            background: linear-gradient(45deg, #ff4500, #b22222);
+            box-shadow: 0 0 10px #ff4500, 0 0 20px #b22222, 0 0 30px #ff4500;
+        }
+        .jupiter {
+            width: 40px;
+            height: 40px;
+            margin-left: -20px;
+            margin-top: -20px;
+            background: url('https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRS5G-fpV8aDvEWIAPzCqEL1jEWMJl5d2YxkLcVUhNlbFJSasq1s4dNjaJpj4Tgldcl') no-repeat center/cover;
+        }
+        .saturn {
+            width: 35px;
+            height: 35px;
+            margin-left: -17.5px;
+            margin-top: -17.5px;
+            background: linear-gradient(45deg, #ffcc66, #ff9966, #ff6699);
+        }
+        .uranus {
+            width: 25px;
+            height: 25px;
+            margin-left: -12.5px;
+            margin-top: -12.5px;
+            background: linear-gradient(45deg, #7fffd4, #40e0d0);
+        }
+        .neptune {
+            width: 25px;
+            height: 25px;
+            margin-left: -12.5px;
+            margin-top: -12.5px;
+            background: linear-gradient(45deg, #0000ff, #000080);
+            box-shadow: 0 0 10px #0000ff, 0 0 20px #000080, 0 0 30px #0000ff;
+        }
+        @keyframes orbit {
+            0% {
+                transform: rotate(0deg) translateX(var(--distance)) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(var(--distance)) rotate(-360deg);
+            }
+        }
+        .orbit {
+            animation: orbit var(--duration) linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="solar-system">
+        <div class="sun"></div>
+        <div class="planet mercury orbit" style="--distance: 100px; --duration: 2s;"></div>
+        <div class="planet venus orbit" style="--distance: 150px; --duration: 4s;"></div>
+        <div class="planet earth orbit" style="--distance: 200px; --duration: 6s;"></div>
+        <div class="planet mars orbit" style="--distance: 250px; --duration: 8s;"></div>
+        <div class="planet jupiter orbit" style="--distance: 350px; --duration: 12s;"></div>
+        <div class="planet saturn orbit" style="--distance: 450px; --duration: 15s;"></div>
+        <div class="planet uranus orbit" style="--distance: 550px; --duration: 18s;"></div>
+        <div class="planet neptune orbit" style="--distance: 650px; --duration: 20s;"></div>
+    </div>
+</body>
+</html>
+
+
